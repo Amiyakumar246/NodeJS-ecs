@@ -19,7 +19,6 @@ phases:
   build:
     commands:         
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
-      - docker images
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG 421320058418.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
   post_build:
     commands:
