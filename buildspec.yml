@@ -13,6 +13,7 @@ phases:
     commands:
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 421320058418.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy
+      - docker image rm 2c3bd69bb8c5 021b3423115f 021b3423115f
       - docker pull 421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy:alpine
   build:
     commands:         
