@@ -5,6 +5,7 @@ env:
    variables:
            IMAGE_REPO_NAME: "tanumoy"
            IMAGE_TAG: "nodeapp"
+           CONTAINER_NAME: "TanumoyContainer1"
    parameter-store:
            DB_HOST: "/Tanumoy/db_host"
 
