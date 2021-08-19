@@ -33,7 +33,7 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('tanumoy2580');
+  mongoose.connect('mongodb://td:mycomputer@cluster0-shard-00-00.6ikeg.mongodb.net:27017,cluster0-shard-00-01.6ikeg.mongodb.net:27017,cluster0-shard-00-02.6ikeg.mongodb.net:27017/conduit?ssl=true&replicaSet=atlas-mbe7gr-shard-0&authSource=admin&retryWrites=true&w=majority');
   mongoose.set('debug', true);
 }
 
