@@ -4,7 +4,7 @@ run-as: root
 env:
    variables:
            IMAGE_REPO_NAME: "tanumoy"
-           IMAGE_TAG: "node"
+           IMAGE_TAG: "nodeapp"
    parameter-store:
            DB_HOST: "/Tanumoy/db_host"
 
