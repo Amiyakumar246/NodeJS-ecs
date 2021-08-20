@@ -4,7 +4,6 @@ run-as: root
 env:
    variables:
            IMAGE_REPO_NAME: "tanumoy"
-           IMAGE_TAG: "nodeapp"
            CONTAINER_NAME: "TanumoyContainer1"
    parameter-store:
            DB_HOST: "/Tanumoy/db_host"
@@ -16,13 +15,14 @@ phases:
       - REPOSITORY_URI=421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy
       - docker pull 421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy:alpine
       - docker tag 421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy:alpine alpine:latest
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-10)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:         
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG 421320058418.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
   post_build:
     commands:
-      - aws ecr batch-delete-image --repository-name tanumoy --image-ids imageTag=nodeapp --region=us-east-1
       - docker push 421320058418.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 
