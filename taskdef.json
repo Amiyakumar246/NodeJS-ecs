@@ -1,0 +1,20 @@
+{
+  "executionRoleArn": "arn:aws:iam::421320058418:role/ecsTaskExecutionRole",
+  "containerDefinitions": [{
+    "name": "TanumoyContainer1",
+    "image": "<IMAGE1_NAME>",
+    "essential": true,
+    "portMappings": [{
+      "hostPort": 0,
+      "protocol": "tcp",
+      "containerPort": 3000
+    }]
+  }],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": "bridge",
+  "cpu": "256",
+  "memory": "512",
+  "family": "Tanumoy-Node"
+}
