@@ -15,7 +15,7 @@ phases:
       - REPOSITORY_URI=421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy
       - docker pull 421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy:alpine
       - docker tag 421320058418.dkr.ecr.us-east-1.amazonaws.com/tanumoy:alpine alpine:latest
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-10)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:         
