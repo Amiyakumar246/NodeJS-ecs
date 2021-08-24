@@ -24,10 +24,10 @@ phases:
   post_build:
     commands:
       - docker push 421320058418.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
 
 artifacts:
     files:
-      - imagedefinitions.json
+      - imageDetail.json
       - appspec.yml
       - taskdef.json
