@@ -5,5 +5,5 @@ Resources:
       Properties:
         TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
-          ContainerName: "TanumoyContainer1"
+          ContainerName: "nodejs"
           ContainerPort: 3000
