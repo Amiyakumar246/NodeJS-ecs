@@ -1,19 +1,9 @@
-FROM alpine:latest
-
+FROM  node:slim
 ARG mongo
-
 ENV MONGO_URL=$mongo
-
-RUN apk add --no-cache nodejs npm
-
-WORKDIR /app
-
+RUN mkdir -p /home/node/yan
+WORKDIR /home/node/yan
 COPY . .
-
 RUN npm install
-
 EXPOSE 3000
-
-ENTRYPOINT ["node"]
-
-CMD ["app.js"]
+CMD ["npm","start"]
