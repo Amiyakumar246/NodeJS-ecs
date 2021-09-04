@@ -4,7 +4,7 @@ run-as: root
 env:
    variables:
            IMAGE_REPO_NAME: "amiya-ecr"
-           CONTAINER_NAME: "nodejs"
+           CONTAINER_NAME: "ecs-Amiya-node-6-Nodejs-f4a0f7c285d5a3da4400"
    parameter-store:
            DB_HOST: "/amiya/db_host"
 
