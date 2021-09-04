@@ -6,4 +6,5 @@ WORKDIR /home/node/amiya
 COPY . .
 RUN npm install
 EXPOSE 3000
-CMD ["npm","start"]
+ENTRYPOINT ["node"]
+CMD ["app.js"]
