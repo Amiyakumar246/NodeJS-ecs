@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: <TASK_DEFINITION>
-        LoadBalancerInfo:
-          ContainerName: "nodejs"
+        TaskDefinition: arn:aws:ecs:us-east-1:421320058418:task-definition/Amiya-node:6
+        LoadBalancerInfo: http://Amiya-ALB-1861547181.us-east-1.elb.amazonaws.com
+          ContainerName: "Nodejs"
           ContainerPort: 3000
