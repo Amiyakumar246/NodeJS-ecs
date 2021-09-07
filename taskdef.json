@@ -1,7 +1,7 @@
 {
   "executionRoleArn": "arn:aws:iam::421320058418:role/ecsTaskExecutionRole",
   "containerDefinitions": [{
-    "name": "TanumoyContainer1",
+    "name": "Nodejs",
     "image": "<IMAGE1_NAME>",
     "essential": true,
     "portMappings": [{
@@ -16,5 +16,5 @@
   "networkMode": "bridge",
   "cpu": "256",
   "memory": "512",
-  "family": "Tanumoy-Node"
+  "family": "Amiya-node"
 }
